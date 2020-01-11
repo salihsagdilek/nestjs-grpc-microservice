@@ -1,0 +1,27 @@
+version: "3.7"
+
+services:
+  table:
+    container_name: table.service
+    build:
+      context: .docker
+      dockerfile: Dockerfile.dev
+    volumes:
+      - ./microservices/table:/app
+      - ./proto:/proto
+    command: nest start
+    working_dir: /app
+  gateway:
+    container_name: gateway
+    build:
+      context: .docker
+      dockerfile: Dockerfile.dev
+    volumes:
+      - ./gateway:/app
+      - ./proto:/proto
+    command: nest start
+    working_dir: /app
+    ports:
+      - 3000:3000
+    depends_on:
+      - table

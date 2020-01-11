@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package table;
+
+service TableService {
+    rpc FindAll (FindAllTableRequest) returns (FindAllTableResponse);
+    rpc FindById (GetByIdRequest) returns (TableResponse);
+}
+
+message FindAllTableRequest {
+}
+
+message GetByIdRequest {
+    string id = 1;
+}
+message FindAllTableResponse {
+    repeated TableResponse tables = 1;
+}
+message TableResponse {
+    string productId = 1;
+    string productName = 2;
+    int32 productPrice = 3;
+    int32 quantity = 4;
+}
