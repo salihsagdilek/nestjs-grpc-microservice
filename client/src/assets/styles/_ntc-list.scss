@@ -1,0 +1,20 @@
+@import "variables";
+
+.ntc-list {
+  li {
+    .ntc-list-title {
+      font-weight: 700;
+      font-size: 16px;
+      margin-bottom: 5px;
+    }
+
+    .ntc-list-description {
+      font-weight: 400;
+      font-size: 14px;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 30px;
+    }
+  }
+}

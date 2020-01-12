@@ -25,3 +25,12 @@ services:
       - 3000:3000
     depends_on:
       - table
+  client:
+    container_name: client
+    build:
+      context: ./
+      dockerfile: .docker/Dockerfile.client
+    volumes:
+      - ./client:/app
+    ports:
+      - 8080:80

@@ -1,0 +1,27 @@
+@import "variables";
+@import "ntc-list";
+
+.ntc-view {
+  display: flex;
+  min-height: 100vh;
+
+  aside {
+    padding: 15px;
+    width: 400px;
+    background-color: $ntc-blue;
+    color: $ntc-white;
+
+  }
+
+  article {
+    padding: 15px;
+    flex: 1
+
+  }
+
+  .total {
+    .price {
+      font-size: 24px;
+    }
+  }
+}
