@@ -5,20 +5,20 @@ services:
     container_name: table.service
     build:
       context: .docker
-      dockerfile: Dockerfile.dev
+      dockerfile: Dockerfile.server
     volumes:
-      - ./microservices/table:/app
-      - ./proto:/proto
+      - ./server/microservices/table:/app
+      - ./server/proto:/proto
     command: nest start
     working_dir: /app
   gateway:
     container_name: gateway
     build:
       context: .docker
-      dockerfile: Dockerfile.dev
+      dockerfile: Dockerfile.server
     volumes:
-      - ./gateway:/app
-      - ./proto:/proto
+      - ./server/gateway:/app
+      - ./server/proto:/proto
     command: nest start
     working_dir: /app
     ports:
